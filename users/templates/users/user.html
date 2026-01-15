@@ -1,0 +1,52 @@
+{% extends "users/layout.html" %}
+{% load static %}
+
+{% block title %}
+    {{request.user.first_name}} @ home page
+{% endblock %}
+
+{% block body %}
+    <h1>Welcome, {{request.user.first_name}}</h1>
+    <ul>
+        <li>Username: {{request.user.username}}</li>
+        <li>Email: {{request.user.email}}</li>
+
+        <h2>Flights Booked</h2>
+
+    </ul>
+    <div>{{request.user.last_name}}, upo ndani ya site sasa.</div>
+    <div>
+        {% if request.user.first_name == "Era" %}
+        <video 
+            src="{% static 'users/WhatsApp Video 2026-01-14 at 06.24.27.mp4' %}" 
+            controls 
+            loop 
+            style="max-width:100%; border:1px solid #000;"
+        >
+            Your browser does not support HTML5 video.
+        </video>
+        {% else %}
+        
+        <video 
+            src="{% static 'users/ELISHA MTOTO WA SHULE~ADHIAMBO REMIX..mp4' %}" 
+            controls  
+            style="max-width:100%; border:1px solid #000;"
+        >
+            Your browser does not support HTML5 video.
+        </video>
+        {% endif %}
+        
+
+        <!--Add video here-->
+        <div>
+            Mimi ni noma si noma?
+        </div>
+    </div>
+    <a href="{% url 'users:logout' %}">
+        <button>Log Out</button>
+    </a>
+
+    <a href="{% url 'flights:index' %}">
+        <button>Book a Flight</button>
+    </a>
+{% endblock %}
