@@ -1,0 +1,17 @@
+# Local development database — never commit.
+db.sqlite3
+
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+
+# Environment
+.env
+.venv/
+venv/
+
+# Editor / OS debris
+*~
+*.swp
+.DS_Store
